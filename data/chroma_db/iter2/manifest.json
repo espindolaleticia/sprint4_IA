@@ -1,0 +1,11 @@
+{
+  "profile": "iter2",
+  "fingerprint": "9ed11f7d43c672e71596d78f42850825c1addede661b4bd9baab45672cb11db8",
+  "embedding_model": "nomic-embed-text-v1.5",
+  "embedding_provider": "sentence_transformers_local",
+  "chunk_size": 750,
+  "chunk_overlap": 100,
+  "documents": 113,
+  "chunks": 216,
+  "quarantined": []
+}

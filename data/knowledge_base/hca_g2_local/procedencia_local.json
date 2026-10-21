@@ -1,0 +1,35 @@
+{
+  "linha_referencia": "GoodWe HCA G2, 7/11/22 kW",
+  "estacoes_gw_xx": "IDs operacionais SIMULADOS; nenhuma associação com um modelo específico",
+  "criado_utc": "2026-10-21T08:03:40.548426+00:00",
+  "documentos": [
+    {
+      "tipo": "datasheet",
+      "arquivo": "GW_HCA-G2_Datasheet-PT.pdf",
+      "paginas": 2,
+      "sha256": "ffa4e02c552415dfb2cc9565b3c3327c27c58e4487f77ac6e140ff5d6f20c343",
+      "descricao": "Ficha de dados técnicos, linha HCA G2",
+      "proveniencia": "https://br.goodwe.com/download-hca-g2-series",
+      "publicar_pdf_no_github": false
+    },
+    {
+      "tipo": "manual",
+      "arquivo": "GW_HCA-G2_User-Manual-PT.pdf",
+      "paginas": 70,
+      "sha256": "e7c5ff73a303eecae7858ff93b87e2802db133c85c64e7f1b65c58733bba681d",
+      "descricao": "Manual de usuário, linha HCA G2 (V1.5 2025-11-11)",
+      "proveniencia": "https://br.goodwe.com/download-hca-g2-series",
+      "publicar_pdf_no_github": false
+    },
+    {
+      "tipo": "modbus",
+      "arquivo": "Mapa MODBUS_HCA G2.pdf",
+      "paginas": 9,
+      "sha256": "e69a364e4ede78e73bca37468ab1fe9d5940429c9be848c27b84a9d650f4dcc9",
+      "descricao": "Mapa MODBUS HCA G2 fornecido pelo grupo; origem oficial não verificada",
+      "proveniencia": "Documento fornecido pelo grupo; verificar origem e compatibilidade",
+      "publicar_pdf_no_github": false
+    }
+  ],
+  "observacao": "Uso acadêmico local; original de terceiro não deve ser redistribuído no GitHub sem autorização."
+}

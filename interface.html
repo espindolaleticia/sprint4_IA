@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoodWe Grid Assistant — Sprint 4 - RAG</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#f4f7fb; margin:0; }
+    header { background:#0b1f3a; color:white; padding:20px; text-align:center; }
+    main { max-width:900px; margin:30px auto; background:white; border-radius:12px; padding:20px; box-shadow:0 3px 12px rgba(0,0,0,.12); }
+    h1 { margin:0; font-size:28px; }
+    .subtitle { color:#cfd8e3; margin-top:6px; }
+    #chat { border:1px solid #d0d7de; border-radius:10px; padding:15px; height:430px; overflow-y:auto; background:#fafafa; }
+    .msg { margin-bottom:14px; padding:12px; border-radius:8px; white-space:pre-wrap; line-height:1.4; }
+    .user { background:#e3f2fd; border-left:5px solid #1976d2; }
+    .bot { background:#e8f5e9; border-left:5px solid #2e7d32; }
+    .label { font-weight:bold; margin-bottom:4px; }
+    .meta { font-size:12px; color:#5f6368; margin-top:8px; }
+    .input-area { display:flex; gap:10px; margin-top:15px; }
+    input { flex:1; padding:12px; border:1px solid #c0c8d2; border-radius:8px; font-size:15px; }
+    button { padding:12px 18px; border:none; border-radius:8px; background:#0b65c2; color:white; cursor:pointer; font-size:15px; }
+    button:hover { background:#084f98; }
+    .secondary { background:#6b7280; }
+    .examples { margin-top:15px; font-size:14px; color:#4b5563; line-height:1.7; }
+    code { background:#eef2f7; padding:3px 6px; border-radius:5px; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>GoodWe Grid Assistant</h1>
+  <div class="subtitle">Sprint 4 · RAG com fontes · dados simulados</div>
+</header>
+<main>
+  <div id="chat">
+    <div class="msg bot">
+      <div class="label">Assistente</div>
+      Faça uma pergunta operacional sobre estações, falhas, consumo, potência, faturamento ou manutenção.
+    </div>
+  </div>
+
+  <div class="input-area">
+    <input id="message" type="text" placeholder="Digite sua pergunta operacional..." onkeydown="handleKey(event)">
+    <button onclick="sendMessage()">Enviar</button>
+    <button class="secondary" onclick="resetChat()">Limpar</button>
+  </div>
+
+</main>
+<script>
+  let sessionId = localStorage.getItem("goodwe_session_id");
+  if (!sessionId) {
+    sessionId = crypto.randomUUID ? crypto.randomUUID() : "session-" + Date.now();
+    localStorage.setItem("goodwe_session_id", sessionId);
+  }
+
+  function appendMessage(type, text, meta="") {
+    const chat = document.getElementById("chat");
+    const div = document.createElement("div");
+    div.className = "msg " + type;
+    const label = document.createElement("div");
+    label.className = "label";
+    label.textContent = type === "user" ? "Usuário" : "Assistente";
+    const content = document.createElement("div");
+    content.textContent = text;
+    div.appendChild(label);
+    div.appendChild(content);
+    if (meta) {
+      const metaDiv = document.createElement("div");
+      metaDiv.className = "meta";
+      metaDiv.textContent = meta;
+      div.appendChild(metaDiv);
+    }
+    chat.appendChild(div);
+    chat.scrollTop = chat.scrollHeight;
+  }
+
+  async function sendMessage() {
+    const input = document.getElementById("message");
+    const message = input.value.trim();
+    if (!message) return;
+    appendMessage("user", message);
+    input.value = "";
+    input.disabled = true;
+    appendMessage("bot", "Processando...");
+
+    try {
+      const response = await fetch("/api/chat", {
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({message:message, session_id:sessionId})
+      });
+      const data = await response.json();
+      document.getElementById("chat").lastChild.remove();
+      if (!response.ok) throw new Error(data.detail || "Erro na API");
+      const fontes = (data.fontes || []).map(f => `[${f.id}] ${f.documento} · ${f.secao}${f.pagina ? ' · página ' + f.pagina : ''}`);
+      const texto = data.answer + (fontes.length ? "\n\nFontes:\n" + fontes.join("\n") : "\n\nRecusa sem alegação documental.");
+      const meta = `modelo=${data.model} | prompt=${data.prompt_version} | latência=${data.latency_ms} ms | perfil=${data.profile} | memória≈${data.memory_tokens_approx}`;
+      appendMessage("bot", texto, meta);
+    } catch (error) {
+      document.getElementById("chat").lastChild.remove();
+      appendMessage("bot", "Erro: " + error.message);
+    }
+    input.disabled = false;
+    input.focus();
+  }
+
+  async function resetChat() {
+    await fetch("/api/reset", {
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({session_id:sessionId})
+    });
+    document.getElementById("chat").innerHTML = "";
+    appendMessage("bot", "Histórico apagado. Pode iniciar uma nova conversa.");
+  }
+
+  function handleKey(event) {
+    if (event.key === "Enter") sendMessage();
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+ollama>=0.6.0
+python-dotenv>=1.0.1
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+pydantic>=2.0.0
+langchain>=1.0.0
+langchain-core>=1.0.0
+langchain-ollama>=1.0.0
+langchain-classic>=1.0.0
+tiktoken>=0.8.0
+
+# Sprint 04
+langchain-chroma>=0.2.0
+chromadb>=0.5.0
+langchain-community>=0.3.0
+langchain-text-splitters>=0.3.0
+pymupdf>=1.24.0
+gradio>=6.0.0
+pytest>=8.0.0
+reportlab>=4.0.0
+
+# Modelos de embeddings open source via Hugging Face (primeiro uso baixa o modelo)
+sentence-transformers>=5.3.0,<7
+transformers>=5.5.0,<6
+torch>=2.10.0

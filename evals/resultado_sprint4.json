@@ -1,0 +1,22 @@
+{
+  "metodo": "rubrica manual documentada; NÃO é score oficial RAGAS",
+  "timestamp_utc": "2026-10-21T05:53:14.323067+00:00",
+  "profiles": {
+    "iter1": {
+      "count": 14,
+      "expected": 14,
+      "complete": true,
+      "faithfulness": 0.7143,
+      "answer_relevancy": 0.6786
+    },
+    "iter2": {
+      "count": 14,
+      "expected": 14,
+      "complete": true,
+      "faithfulness": 0.8571,
+      "answer_relevancy": 0.8214
+    }
+  },
+  "gain_both_metrics": true,
+  "observation": "Ganho requer avaliação humana integral no mesmo conjunto; não é pressuposto."
+}

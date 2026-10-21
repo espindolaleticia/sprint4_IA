@@ -1,0 +1,28 @@
+{
+  "metodo": "rubrica manual documentada; NÃO é score oficial RAGAS",
+  "timestamp_utc": "2026-10-21T09:11:22.950333+00:00",
+  "edition": "hca",
+  "corpus_matches": {
+    "iter1": true,
+    "iter2": true
+  },
+  "profiles": {
+    "iter1": {
+      "count": 22,
+      "expected": 22,
+      "complete": true,
+      "faithfulness": 0.9773,
+      "answer_relevancy": 0.9773
+    },
+    "iter2": {
+      "count": 22,
+      "expected": 22,
+      "complete": true,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9773
+    }
+  },
+  "gain_both_metrics": false,
+  "observation": "Ganho requer avaliação humana integral no mesmo conjunto; não é pressuposto.",
+  "proveniencia_publicacao": "reprodução fiel de saída de report compartilhada pelo usuário; coletas/rubrica completas armazenadas localmente"
+}

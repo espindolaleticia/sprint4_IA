@@ -1,0 +1,50 @@
+{
+  "metodo": "rubrica manual documentada; NÃO é score oficial RAGAS",
+  "date": "2026-10-21",
+  "fonte_dos_valores": "saidas do terminal e notas das 66 avaliações fornecidas pelo usuário nesta conversa",
+  "observacao_rastreabilidade": "Resumo publicável; arquivos brutos de coleta e de rubrica com documento e nome do avaliador permanecem no computador do grupo. Não reexecutamos as chamadas Ollama neste ambiente.",
+  "perguntas_por_versao": 22,
+  "avaliacoes_totais": 66,
+  "scores": {
+    "iter1": {
+      "faithfulness": 0.9773,
+      "answer_relevancy": 0.9773,
+      "contagem": 22
+    },
+    "iter2": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9773,
+      "contagem": 22
+    },
+    "iter2_seguranca_v2": {
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "contagem": 22
+    }
+  },
+  "gain_both_metrics_vs_iter1": true,
+  "same_corpus_and_questions": true,
+  "indexes_generated_locally": {
+    "iter1": {
+      "documents": 113,
+      "chunks": 349,
+      "chunk_size": 400,
+      "chunk_overlap": 40,
+      "top_k": 3
+    },
+    "iter2": {
+      "documents": 113,
+      "chunks": 216,
+      "chunk_size": 750,
+      "chunk_overlap": 100,
+      "top_k": 4
+    }
+  },
+  "guardrail_revision": "seguranca-v2; arquivo fonte em src/guardrails/moderation.py",
+  "limites": [
+    "N=22; conjunto académico fixo",
+    "notas fornecidas por um único fluxo de julgamento humano, não são RAGAS oficial",
+    "só cenário de estações simuladas; sem integração a equipamentos reais",
+    "comparação entre dois modelos foi realizada antes de incluir PDFs HCA G2 e não deve ser apresentada como comparação de modelos do corpus ampliado"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "metodo": "rubrica manual documentada; NÃO é score oficial RAGAS",
+  "edition": "hca_safety",
+  "timestamp_utc": "2026-10-21T09:41:39.091183+00:00",
+  "mesmo_corpus_e_perguntas": {
+    "iter1": {
+      "corpus_valido": true,
+      "mesmas_perguntas": true,
+      "anotacoes_do_corpus": true,
+      "guardrail_valido": true
+    },
+    "iter2": {
+      "corpus_valido": true,
+      "mesmas_perguntas": true,
+      "anotacoes_do_corpus": true,
+      "guardrail_valido": true
+    },
+    "iter2_seguranca_v2": {
+      "corpus_valido": true,
+      "mesmas_perguntas": true,
+      "anotacoes_do_corpus": true,
+      "guardrail_valido": true
+    }
+  },
+  "profiles": {
+    "iter1": {
+      "count": 22,
+      "expected": 22,
+      "complete": true,
+      "faithfulness": 0.9773,
+      "answer_relevancy": 0.9773
+    },
+    "iter2": {
+      "count": 22,
+      "expected": 22,
+      "complete": true,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9773
+    },
+    "iter2_seguranca_v2": {
+      "count": 22,
+      "expected": 22,
+      "complete": true,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0
+    }
+  },
+  "gain_both_metrics_vs_iter1": true,
+  "observacao": "A versão de segurança usa o índice iter2 existente; só muda o guardrail. Scores históricos não foram alterados. Ganho depende de notas reais, não da expectativa.",
+  "proveniencia_publicacao": "reprodução fiel de saída de report compartilhada pelo usuário; coletas/rubrica completas armazenadas localmente"
+}

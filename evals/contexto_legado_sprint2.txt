@@ -1,0 +1,50 @@
+BASE OPERACIONAL SIMULADA — GOODWE GRID ASSISTANT — SPRINT 2
+
+Contexto:
+O sistema representa uma rede comercial de eletropostos GoodWe com múltiplas estações conectadas.
+Os dados abaixo são mockados para validação acadêmica do chatbot.
+
+Estações offline:
+- GW-04: offline por falha de comunicação registrada às 14h32.
+- GW-07: offline por falha de comunicação registrada às 14h32.
+
+Falhas críticas:
+- GW-09: apresentou superaquecimento no módulo principal às 13h42.
+- A estação GW-09 foi automaticamente desativada por segurança operacional.
+
+Consumo energético:
+- GW-12 registrou o maior consumo energético do dia.
+- Consumo da GW-12: 428 kWh até o momento.
+
+Faturamento:
+- Faturamento acumulado da rede nesta semana: R$ 18.420,00.
+- O faturamento é calculado com base nos ciclos de recarga, consumo em kWh e registros de transação.
+
+Gestão de potência:
+- Capacidade operacional total da rede: 100%.
+- Consumo atual da rede: 74% da capacidade operacional.
+- A rede está dentro dos parâmetros seguros.
+- Não há sobrecarga ativa no momento.
+
+Manutenção:
+- GW-03 teve sua última manutenção em 12/05/2026.
+- Serviço realizado: substituição preventiva do módulo de refrigeração.
+
+Alertas prioritários:
+- GW-11 apresenta instabilidade de comunicação desde 15h08.
+- Alerta classificado como prioritário.
+
+Ciclos de recarga e RFID:
+- Os ciclos de recarga devem ser registrados com identificação do usuário, estação, horário de início, horário de fim, consumo em kWh e valor cobrado.
+- A identificação por RFID pode ser usada para vincular o ciclo ao usuário ou operador autorizado.
+- O billing deve considerar consumo, tarifa aplicada e registro da transação.
+
+Orquestração de potência:
+- Em caso de aproximação do limite operacional, o sistema deve priorizar segurança elétrica.
+- A potência pode ser redistribuída entre estações para evitar sobrecarga.
+- Estações com falha crítica devem ser removidas da distribuição de potência até validação técnica.
+
+Limitações:
+- Estes dados são simulados.
+- O chatbot não possui acesso a sensores reais nesta Sprint.
+- Caso uma pergunta exija dado não listado acima, a resposta deve informar que a informação não foi encontrada no contexto operacional disponível.

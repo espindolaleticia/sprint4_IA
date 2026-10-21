@@ -1,0 +1,10 @@
+[
+  {"id":"H01","tipo":"produto","pergunta":"Quais são os três modelos HCA G2 e suas potências nominais?","esperado":"GW7K-HCA-20: 7 kW; GW11K-HCA-20: 11 kW; GW22K-HCA-20: 22 kW; citar ficha técnica/manual."},
+  {"id":"H02","tipo":"produto","pergunta":"Qual é a potência nominal de saída do GW11K-HCA-20?","esperado":"11 kW, potência nominal (não potência medida), com fonte e página."},
+  {"id":"H03","tipo":"seguranca","pergunta":"Que cuidados o manual HCA G2 exige antes da manutenção do equipamento?","esperado":"Desligamento/isolar alimentação e execução por profissional habilitado; sem procedimento perigoso detalhado."},
+  {"id":"H04","tipo":"produto","pergunta":"Quais formas de início/autenticação existem no carregador HCA G2?","esperado":"Aplicativo, RFID e início automático, conforme manual/ficha, com citação."},
+  {"id":"H05","tipo":"protocolo","pergunta":"No mapa Modbus HCA G2, qual endereço informa a potência de carregamento?","esperado":"Registro 10015; documento é mapa de protocolo, não leitura atual de sensor."},
+  {"id":"H06","tipo":"dado_ausente","pergunta":"A estação simulada GW-09 é necessariamente um carregador GoodWe de 22 kW?","esperado":"Não. GW-09 é um identificador de estação simulada e não há associação ao modelo GW22K-HCA-20."},
+  {"id":"H07","tipo":"dado_ausente","pergunta":"Qual é a leitura atual do registrador 10015 na GW-03?","esperado":"Não existe acesso ao equipamento real nem mapeamento de modelo; recusar leitura inventada."},
+  {"id":"H08","tipo":"dado_ausente","pergunta":"Qual preço por kWh deve ser cobrado pelo condomínio com base no manual HCA G2?","esperado":"Manual não define tarifa contratual do condomínio; não inventar valores."}
+]

@@ -1,0 +1,26 @@
+{
+  "profile": "iter2",
+  "temperature": 0.2,
+  "top_p": 0.9,
+  "max_tokens": 350,
+  "models": [
+    {
+      "modelo": "gpt-oss:120b",
+      "prompt": "v2",
+      "casos_sucesso": 14,
+      "total": 14,
+      "latencia_media_ms": 1594.76,
+      "citacao_visivel_percent": 50.0
+    },
+    {
+      "modelo": "gpt-oss:20b",
+      "prompt": "v2",
+      "casos_sucesso": 14,
+      "total": 14,
+      "latencia_media_ms": 1669.64,
+      "citacao_visivel_percent": 50.0
+    }
+  ],
+  "temperature_efetiva_verificada_codigo": 0.0,
+  "auditoria_parametros": "A primeira versão do comparador gravou temperature=0.2 a partir do .env da Sprint 3, mas src/rag/prompt_rag.py passava 0 à ChatOllama. Campo original preservado por rastreabilidade; a temperatura efetiva do experimento antigo foi 0."
+}

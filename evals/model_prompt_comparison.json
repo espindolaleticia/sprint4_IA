@@ -1,0 +1,118 @@
+[
+  {
+    "modelo": "gpt-oss:120b",
+    "prompt": "v1",
+    "quality_percent": 75.0,
+    "latency_avg_ms": 1009.83,
+    "status": "ok",
+    "amostras": [
+      {
+        "id": 1,
+        "resposta": "**Status:**  \nAs estações **GW-04** e **GW-07** estão offline.\n\n**Evidência operacional:**  \n- GW-04 – falha de comunicação, horário 14h32.  \n- GW-07 – falha de comunicação, horário 14h32.  \n\n**Ação recomendada:**  \n1. Verificar a conectividade de rede (cabos, roteadores, sinal) nas duas unidades.  \n2. Realizar um reset remoto, se disponível, ou programar visita de manutenção para inspeção física.  \n3. Atualizar o registro de status após a restauração da comunicação.",
+        "score": 1.0
+      },
+      {
+        "id": 3,
+        "resposta": "**Status:**  \nA estação que apresentou o maior consumo energético hoje foi a **GW-12**, com 428 kWh consumidos.\n\n**Evidência operacional:**  \n```json\n{\n  \"maior_consumo_estacao\": \"GW-12\",\n  \"maior_consumo_kwh\": 428\n}\n```\n\n**Ação recomendada:**  \nMonitorar o consumo da GW-12 nas próximas horas para garantir que permaneça dentro dos limites de potência (74 % do total) e, se houver tendência de aumento, considerar redistribuição de carga conforme as regras de potência.",
+        "score": 1.0
+      },
+      {
+        "id": 4,
+        "resposta": "O faturamento total da rede na semana atual foi **R$ 18 420,00**.  \nEsse valor foi calculado com base nos ciclos de recarga realizados, no consumo em kWh e nos registros de transação conforme a regra de billing definida.",
+        "score": 0.6666666666666666
+      },
+      {
+        "id": 5,
+        "resposta": "**Status:**  \nA rede está operando dentro dos parâmetros seguros, com consumo de potência em 74 % da capacidade total.\n\n**Evidência operacional:**  \n- capacidade_percentual: 100 %  \n- consumo_percentual: 74 %  \n- sobrecarga_ativa: false  \n- situação: “dentro dos parâmetros seguros”\n\n**Ação recomendada:**  \nContinue monitorando o consumo percentual. Caso o consumo se aproxime de 90 % ou haja novos alertas de instabilidade, considere redistribuir carga entre as estações ou revisar a alocação de potência conforme as regras de potência.",
+        "score": 0.3333333333333333
+      }
+    ]
+  },
+  {
+    "modelo": "gpt-oss:120b",
+    "prompt": "v2",
+    "quality_percent": 75.0,
+    "latency_avg_ms": 911.18,
+    "status": "ok",
+    "amostras": [
+      {
+        "id": 1,
+        "resposta": "**Status:** GW-04 e GW-07 estão offline.  \n**Evidência operacional:** Falha de comunicação registrada às 14h32 para ambas as estações.  \n**Ação recomendada:** Verificar a conectividade de rede e os módulos de comunicação das estações; caso o problema persista, acionar o suporte técnico especializado para diagnóstico e restauração.",
+        "score": 1.0
+      },
+      {
+        "id": 3,
+        "resposta": "A estação que apresentou o maior consumo energético hoje foi a **GW-12**, com um consumo de **428 kWh**. Essa informação está registrada no contexto operacional disponível. Caso precise de mais detalhes ou de análise de consumo por período, recomendo solicitar um relatório ao suporte técnico da GoodWe.",
+        "score": 1.0
+      },
+      {
+        "id": 4,
+        "resposta": "**Status:** Faturamento da rede na semana atual.  \n**Evidência operacional:** Conforme o contexto, o valor registrado é **R$ 18 420,00**.  \n**Ação recomendada:** Caso precise de detalhamento por estação ou período, solicite o relatório de transações ao módulo de billing.",
+        "score": 0.6666666666666666
+      },
+      {
+        "id": 5,
+        "resposta": "**Status:** A rede está operando dentro dos parâmetros seguros.  \n**Evidência operacional:** O consumo de potência está em 74 % da capacidade total (100 %), sem sobrecarga ativa.  \n**Ação recomendada:** Continue monitorando o consumo; caso o percentual de uso se aproxime de 100 % ou haja indicação de sobrecarga, redistribua a carga entre as estações e verifique possíveis ajustes operacionais.",
+        "score": 0.3333333333333333
+      }
+    ]
+  },
+  {
+    "modelo": "gpt-oss:20b",
+    "prompt": "v1",
+    "quality_percent": 62.5,
+    "latency_avg_ms": 3060.98,
+    "status": "ok",
+    "amostras": [
+      {
+        "id": 1,
+        "resposta": "**Status:**  \nAs estações offline no momento são **GW‑04** e **GW‑07**.\n\n**Evidência operacional:**  \nInformação extraída do contexto operacional:  \n- GW‑04 – falha de comunicação, horário 14h32  \n- GW‑07 – falha de comunicação, horário 14h32  \n\n**Ação recomendada:**  \nVerificar a conectividade de rede dessas estações e, se necessário, programar uma intervenção de manutenção para restaurar a comunicação.",
+        "score": 0.5
+      },
+      {
+        "id": 3,
+        "resposta": "Status:  \nA estação **GW‑12** registrou o maior consumo energético do dia, com **428 kWh**.\n\nEvidência operacional:  \nInformação extraída do campo `maior_consumo_estacao` e `maior_consumo_kwh` do contexto operacional.\n\nAção recomendada:  \nVerificar se o consumo está dentro dos limites de potência definidos (74 % da capacidade total) e monitorar a estação para garantir que não haja sobrecarga ou instabilidade.",
+        "score": 0.6666666666666666
+      },
+      {
+        "id": 4,
+        "resposta": "O faturamento total da rede na semana atual foi de **R$ 18.420,00**.  \nEsta cifra foi calculada com base nos ciclos de recarga, consumo em kWh e registros de transação.",
+        "score": 1.0
+      },
+      {
+        "id": 5,
+        "resposta": "Status:  \nA rede está operando dentro dos parâmetros seguros, com consumo de 74 % da capacidade total e sem sobrecarga ativa.\n\nEvidência operacional:  \n- `potencia.capacidade_percentual`: 100 %  \n- `potencia.consumo_percentual`: 74 %  \n- `potencia.sobrecarga_ativa`: false  \n- `potencia.situacao`: \"dentro dos parâmetros seguros\"\n\nAção recomendada:  \nContinue monitorando o consumo percentual e mantenha a redistribuição de potência conforme as regras de segurança. Se o consumo subir acima de 90 %, considere redistribuir carga ou reduzir a potência de algumas estações.",
+        "score": 0.3333333333333333
+      }
+    ]
+  },
+  {
+    "modelo": "gpt-oss:20b",
+    "prompt": "v2",
+    "quality_percent": 75.0,
+    "latency_avg_ms": 2736.78,
+    "status": "ok",
+    "amostras": [
+      {
+        "id": 1,
+        "resposta": "**Status:** Estações offline  \n**Evidência operacional:**  \n- GW-04 – falha de comunicação registrada às 14h32  \n- GW-07 – falha de comunicação registrada às 14h32  \n\n**Ação recomendada:**  \n1. Verificar a conectividade de rede das estações GW-04 e GW-07.  \n2. Reiniciar o módulo de comunicação ou reconfigurar a conexão, se necessário.  \n3. Caso o problema persista, acionar o suporte técnico especializado para diagnóstico mais aprofundado.",
+        "score": 1.0
+      },
+      {
+        "id": 3,
+        "resposta": "**Status:** Estação com maior consumo energético hoje  \n**Evidência operacional:** GW‑12 registrou 428 kWh, o maior valor de consumo na rede.  \n**Ação recomendada:** Monitorar o consumo de GW‑12 nos próximos dias para garantir que permaneça dentro dos limites operacionais e evitar sobrecarga.",
+        "score": 0.6666666666666666
+      },
+      {
+        "id": 4,
+        "resposta": "Faturamento total da rede na semana atual: **R$ 18.420,00**.",
+        "score": 1.0
+      },
+      {
+        "id": 5,
+        "resposta": "**Status:** Dentro dos parâmetros seguros.  \n**Evidência operacional:** Consumo atual de 74 % da capacidade total (capacidade = 100 %) e sobrecarga_ativa = false.  \n**Ação recomendada:** Continuar monitorando o consumo e manter a operação dentro do limite de 100 %. Se houver aumento de demanda, redistribua potência conforme as regras de segurança.",
+        "score": 0.3333333333333333
+      }
+    ]
+  }
+]
